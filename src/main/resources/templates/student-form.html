@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Form</title>
+</head>
+<body>
+<form th:action="@{/register-student}" method="post" th:object="${student}">
+    <label>
+        First name:
+        <input type="text" th:field="*{firstName}">
+    </label>
+    <br/>
+    <label>
+        Last name:
+        <input type="text" th:field="*{lastName}">
+    </label>
+    <br/>
+    <label>
+        Degree:
+        <select th:field="*{degree}">
+            <option th:each="deg : ${T(com.example.formexample.entities.Degree).values()}"
+                    th:value="${deg.name}" th:text="${deg.label}"></option>
+        </select>
+    </label>
+    <br/>
+    <label>
+        Year:
+        <input type="number" th:field="*{year}"
+               th:min="${T(com.example.formexample.entities.Student).MIN_YEAR}"
+               th:max="${T(com.example.formexample.entities.Student).MAX_YEAR}"/>
+    </label>
+    <br/>
+    <label>
+        Did graduate:
+        <input type="checkbox" th:field="*{graduated}">
+    </label>
+    <br/>
+    <input type="submit" value="Submit"/>
+</form>
+</body>
+</html>

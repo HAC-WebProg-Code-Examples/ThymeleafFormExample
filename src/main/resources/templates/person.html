@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:object="${person}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="*{name}">Person</title>
+</head>
+<body>
+<h3 th:text="'Name: ' + *{name}">Name: unknown</h3>
+<h5 th:text="'Age: ' + *{age}">Age: unknown</h5>
+</body>
+</html>

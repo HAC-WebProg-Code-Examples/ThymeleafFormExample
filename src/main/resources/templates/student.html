@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:object="${student}">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="*{name}">Student</title>
+</head>
+<body>
+<h3 th:text="'Name: ' + *{name}">Name: unknown</h3>
+<h5 th:text="'Degree: ' + *{degree}">Degree: unknown</h5>
+<h5 th:text="'Year: ' + *{year}">Year: unknown</h5>
+<h5 th:text="'Gragduated: ' + *{graduated}">Graduated: unknown</h5>
+</body>
+</html>
